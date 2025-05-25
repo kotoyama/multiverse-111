@@ -1,84 +1,86 @@
-# Turborepo starter
+# multiverse-111 monorepo
 
-This Turborepo starter is maintained by the Turborepo core team.
+This is a monorepo managing multiple web applications, built with Next.js, TypeScript, and using Bun as the package manager.
 
-## Using this example
+## Table of Contents
 
-Run the following command:
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Running the Applications](#running-the-applications)
+- [Available Scripts](#available-scripts)
+- [Switching Languages (English/Arabic)](#switching-languages-englisharabic)
+- [Managing Bonuses](#managing-bonuses)
+- [Managing Users](#managing-users)
+- [Deposit Feature](#deposit-feature)
 
-```sh
-npx create-turbo@latest
-```
+## Prerequisites
 
-## What's inside?
+Before you begin, ensure you have the following installed:
 
-This Turborepo includes the following packages/apps:
+- **Node.js**: Version 18 or higher (as specified in `package.json`)
+- **Bun**: This project uses Bun as its package manager. Installation instructions can be found on the [official Bun website](https://bun.sh/).
 
-### Apps and Packages
+## Installation
 
-- `betfinal`: a [Next.js](https://nextjs.org/) app
-- `cosmoswin`: another [Next.js](https://nextjs.org/) app
-- `@repo/uikit`: a stub React component library shared by both `cosmoswin` and `betfinal` applications
-- `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
+1.  **Clone the repository**:
+    ```bash
+    git clone git@github.com:kotoyama/multiverse-111.git
+    cd multiverse-111
+    ```
+2.  **Install dependencies**:
+    Using Bun, install all necessary dependencies for the monorepo:
+    ```bash
+    bun install
+    ```
 
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
+## Running the Applications
 
-### Utilities
+This monorepo uses Turbo to manage tasks across packages and applications.
 
-This Turborepo has some additional tools already setup for you:
+-   **Start all applications in development mode**:
+    ```bash
+    bun run dev
+    ```
+    This command will typically start all applications defined in the `apps/` directory (e.g., `cosmoswin`) concurrently.
 
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
+-   **Run a specific application** (Optional):
+    If you need to run a single application (e.g., `cosmoswin`), you can often use Turbo's filtering capabilities:
+    ```bash
+    bun run dev --filter=cosmoswin
+    ```
+    *(Note: The exact filter name depends on the package name defined in its `package.json`)*
 
-### Build
+## Available Scripts
 
-To build all apps and packages, run the following command:
+The following scripts are available at the root of the monorepo and can be run using `bun run <script-name>`:
 
-```
-cd multiverse-111
-pnpm build
-```
+-   `bun run build`: Builds all applications for production.
+-   `bun run lint`: Lints the codebase across all packages and applications.
+-   `bun run format`: Formats the code using Prettier.
+-   `bun run check-types`: Runs TypeScript type checking.
 
-### Develop
+## Switching Languages (English/Arabic)
 
-To develop all apps and packages, run the following command:
+The applications within this monorepo support internationalization (i18n), allowing users to switch between English and Arabic.
 
-```
-cd multiverse-111
-pnpm dev
-```
+- Language switching is managed through the `LanguageSwitcher` component, which is part of the `packages/i18n` package.
+- All translation data is stored in JSON files located within the `packages/i18n` package.
+- Internationalization is implemented using the `next-intl` library. The implementation does not utilize routing for locale management, ensuring that language changes do not alter the URL structure.
 
-### Remote Caching
+## Managing Bonuses
 
-> [!TIP]
-> Vercel Remote Cache is free for all plans. Get started today at [vercel.com](https://vercel.com/signup?/signup?utm_source=remote-cache-sdk&utm_campaign=free_remote_cache).
+A dedicated feature for managing new bonuses is **not implemented** in the current version of the applications. To add or modify bonus data, you can manually edit the mock files (e.g., JSON files in `packages/data`).
 
-Turborepo can use a technique known as [Remote Caching](https://turborepo.com/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
+## Managing Users
 
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup?utm_source=turborepo-examples), then enter the following commands:
+These apps use a mock setup with NextAuth for user authentication:
 
-```
-cd multiverse-111
-npx turbo login
-```
+- Pick a username from the mock files and enter it in the login form. Any password works.
+- Manually edit the mock files to add a new user with a unique username.
 
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
+## Deposit Feature
 
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
+These applications include a deposit feature that allows logged-in users to simulate making a deposit.
 
-```
-npx turbo link
-```
-
-## Useful Links
-
-Learn more about the power of Turborepo:
-
-- [Tasks](https://turborepo.com/docs/crafting-your-repository/running-tasks)
-- [Caching](https://turborepo.com/docs/crafting-your-repository/caching)
-- [Remote Caching](https://turborepo.com/docs/core-concepts/remote-caching)
-- [Filtering](https://turborepo.com/docs/crafting-your-repository/running-tasks#using-filters)
-- [Configuration Options](https://turborepo.com/docs/reference/configuration)
-- [CLI Usage](https://turborepo.com/docs/reference/command-line-reference)
+- The feature provides a user interface where users can enter deposit amounts into the numeric input field. Once they click the deposit button, the amount will be added to the user's balance, and the deposit count will be incremented.
+- Available bonuses are displayed based on the user’s personalized fields (country, current balance, total number of deposits, registration date, etc.).
