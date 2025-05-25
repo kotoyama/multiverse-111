@@ -1,10 +1,5 @@
 import { withAuth, type NextRequestWithAuth } from 'next-auth/middleware'
-
-import { i18nMiddleware as createI18nMiddleware } from '@repo/i18n/middleware'
-
-import { pathnames } from './routing'
-
-const i18nMiddleware = createI18nMiddleware(pathnames)
+import { NextResponse } from 'next/server'
 
 export default withAuth(
   function middleware(req: NextRequestWithAuth) {
@@ -16,17 +11,15 @@ export default withAuth(
       return Response.redirect(new URL('/', req.url))
     }
 
-    return i18nMiddleware(req)
+    return NextResponse.next()
   },
   {
     callbacks: {
       authorized: ({ req, token }) => {
         const { pathname } = req.nextUrl
-
         if (pathname.startsWith('/login')) {
           return true
         }
-
         return !!token
       },
     },

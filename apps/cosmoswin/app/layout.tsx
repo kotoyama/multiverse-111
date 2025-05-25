@@ -4,18 +4,17 @@ import { getServerSession } from 'next-auth/next'
 
 import { i18n } from '@repo/i18n/config'
 import { NextIntlClientProvider } from '@repo/i18n/client'
-import { getMessages, setRequestLocale } from '@repo/i18n/server'
-import { type WithLocale } from '@repo/i18n/types'
+import { getLocale } from '@repo/i18n/server'
 import '@repo/uikit/style.css'
 
-import { authOptions } from '../api/auth/[...nextauth]/route'
+import { authOptions } from './api/auth/[...nextauth]/route'
 import {
   BootstrapAppProvider,
   SessionProvider,
   StoreProvider,
-} from '../providers'
-import { Header } from '../ui/widgets/header'
-import '../ui/globals.css'
+} from './providers'
+import { Header } from './ui/widgets/header'
+import './ui/globals.css'
 
 const poppins = Poppins({
   variable: '--font-poppins',
@@ -33,11 +32,7 @@ export async function generateStaticParams() {
   return i18n.locales.map((locale) => ({ lang: locale }))
 }
 
-export default async function RootLayout(props: {
-  children: React.ReactNode
-  params: Promise<WithLocale>
-}) {
-  const params = await props.params
+export default async function RootLayout(props: { children: React.ReactNode }) {
   const { children } = props
 
   const session = await getServerSession(authOptions)
@@ -48,14 +43,13 @@ export default async function RootLayout(props: {
     },
   }
 
-  setRequestLocale(params.locale)
-
-  const messages = await getMessages()
+  const locale = await getLocale()
+  const dir = i18n.dirs[locale] ?? i18n.defaultDir
 
   return (
-    <html lang={params.locale}>
+    <html lang={locale} dir={dir}>
       <body className={poppins.variable}>
-        <NextIntlClientProvider locale={params.locale} messages={messages}>
+        <NextIntlClientProvider locale={locale}>
           <SessionProvider session={session}>
             <StoreProvider preloadedState={preloadedState}>
               <BootstrapAppProvider />

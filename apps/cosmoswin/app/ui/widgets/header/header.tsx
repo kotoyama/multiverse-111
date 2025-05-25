@@ -1,6 +1,7 @@
 'use client'
 
 import React from 'react'
+import Link from 'next/link'
 import { signOut } from 'next-auth/react'
 
 import { useTranslations } from '@repo/i18n/client'
@@ -9,7 +10,6 @@ import LanguageSwitcher from '@repo/i18n/language-switcher'
 
 import { useAppSelector } from '../../../lib/hooks'
 import styles from './header.module.css'
-import { Link } from '../../../../routing'
 
 type Props = {
   brand: string

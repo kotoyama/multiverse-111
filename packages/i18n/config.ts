@@ -1,19 +1,22 @@
 export const supportedLanguages = [
-	{
-		code: 'en',
-    label: 'English',
-    dir: 'ltr',
-		default: true,
-	},
-	{
-		code: 'ar',
-		label: 'العربية',
-    dir: 'rtl',
-		default: false,
-	},
+  {
+    code: 'en',
+    default: true,
+  },
+  {
+    code: 'ar',
+    default: false,
+  },
 ] as const
 
+export const languageDirs: Record<(typeof supportedLanguages)[number]['code'], 'ltr' | 'rtl'> = {
+  en: 'ltr',
+  ar: 'rtl',
+} as const
+
 export const i18n = {
-	locales: supportedLanguages.map((l) => l.code),
-	defaultLocale: supportedLanguages.find((l) => l.default)?.code ?? 'en',
+  dirs: languageDirs,
+  locales: supportedLanguages.map((l) => l.code),
+  defaultLocale: supportedLanguages.find((l) => l.default)?.code ?? 'en',
+  defaultDir: 'ltr',
 } as const

@@ -7,7 +7,7 @@ import { Alert } from '@repo/uikit/components'
 import type { Bonus, User } from '@repo/shared-types'
 import { filterBonuses, type BonusFilterCriteria } from '@repo/libs'
 
-import { authOptions } from '../../api/auth/[...nextauth]/route'
+import { authOptions } from '../api/auth/[...nextauth]/route'
 import { BonusesList } from './bonuses-list'
 import styles from './page.module.css'
 

@@ -1,23 +1,30 @@
+:global([dir='ltr']) .container .languageButton:first-child,
+:global([dir='rtl']) .container .languageButton:last-child {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+:global([dir='ltr']) .container .languageButton:last-child,
+:global([dir='rtl']) .container .languageButton:first-child {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
 .container {
   .languageButton {
     padding: var(--space-xs) var(--space-s);
     border: 2px solid var(--uikit-color-primary-main);
+    color: var(--uikit-color-primary-main);
     background-color: transparent;
     cursor: pointer;
     font-weight: 500;
     text-transform: uppercase;
 
-    &:first-child {
-      border-top-left-radius: var(--uikit-border-radius);
-      border-bottom-left-radius: var(--uikit-border-radius);
+    &:hover {
+      background-color: var(--uikit-color-background-input);
     }
 
-    &:last-child {
-      border-top-right-radius: var(--uikit-border-radius);
-      border-bottom-right-radius: var(--uikit-border-radius);
-    }
-
-    &[data-selected="true"] {
+    &[data-selected='true'] {
       cursor: default;
       background-color: var(--uikit-color-primary-main);
       color: var(--uikit-color-primary-contrast);

@@ -5,6 +5,10 @@
   width: 100%;
   max-width: 25rem;
 
+  h1 {
+    text-align: center;
+  }
+
   .loginForm {
     width: 100%;
     display: flex;

@@ -5,8 +5,8 @@ import React from 'react'
 import { useTranslations } from '@repo/i18n/client'
 import { Card, FormInput, Button, Alert } from '@repo/uikit/components'
 
-import { useAppDispatch, useAppSelector } from '../../lib/hooks'
-import { updateBalance } from '../../lib/features/user/userSlice'
+import { useAppDispatch, useAppSelector } from '../lib/hooks'
+import { updateBalance } from '../lib/features/user/userSlice'
 import styles from './page.module.css'
 
 export function DepositForm() {
@@ -35,9 +35,9 @@ export function DepositForm() {
       ...prev,
       meta: {
         ...prev.meta,
+        isLoading: true,
         errorMessage: '',
         successMessage: '',
-        isLoading: true,
       },
     }))
 
@@ -46,7 +46,12 @@ export function DepositForm() {
     if (isNaN(depositAmount) || depositAmount <= 0) {
       setFormData((prev) => ({
         ...prev,
-        meta: { ...prev.meta, errorMessage: t('error.invalidAmount') },
+        meta: {
+          ...prev.meta,
+          isLoading: false,
+          successMessage: '',
+          errorMessage: t('error.invalidAmount'),
+        },
       }))
       return
     }
