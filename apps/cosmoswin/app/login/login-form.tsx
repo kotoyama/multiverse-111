@@ -7,7 +7,7 @@ import { useRouter } from 'next/navigation'
 import { useTranslations } from '@repo/i18n/client'
 import { Card, FormInput, Button, Alert } from '@repo/uikit/components'
 
-import { appName } from '../app-name'
+import { settings } from '../settings'
 import styles from './page.module.css'
 
 export default function LoginForm() {
@@ -58,7 +58,7 @@ export default function LoginForm() {
 
   return (
     <Card className={styles.container}>
-      <h1>{t('title', { brand: appName })}</h1>
+      <h1>{t('title', { brand: settings.appName })}</h1>
       <form className={styles.loginForm} onSubmit={handleLogin}>
         <FormInput
           id="username"

@@ -2,7 +2,7 @@
 
 import { useTranslations } from '@repo/i18n/client'
 
-import { appName } from './app-name'
+import { settings } from './settings'
 import { useAppSelector } from './lib/hooks'
 import styles from './page.module.css'
 
@@ -13,7 +13,10 @@ export function UserInfo() {
   return (
     <main>
       <h1 className={styles.title}>
-        {t('title', { brand: appName, username: currentUser!.username })}
+        {t('title', {
+          brand: settings.appName,
+          username: currentUser!.username,
+        })}
       </h1>
       <p>{t('subtitle')}</p>
       <div className={styles.userInfo}>

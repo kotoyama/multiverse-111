@@ -12,7 +12,7 @@ import {
   SessionProvider,
   StoreProvider,
 } from './providers'
-import { appName } from './app-name'
+import { settings } from './settings'
 import { Header } from './ui/widgets/header'
 import './ui/globals.css'
 
@@ -28,8 +28,8 @@ export async function generateMetadata() {
   const t = await getTranslations({ locale, namespace: 'metadata' })
 
   return {
-    title: t('title', { brand: appName }),
-    description: t('description', { brand: appName }),
+    title: t('title', { brand: settings.appName }),
+    description: t('description', { brand: settings.appName }),
   }
 }
 
@@ -58,7 +58,7 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
           <SessionProvider session={session}>
             <StoreProvider preloadedState={preloadedState}>
               <BootstrapAppProvider />
-              <Header brand={appName} />
+              <Header brand={settings.appName} />
               {children}
             </StoreProvider>
           </SessionProvider>

@@ -6,7 +6,7 @@ import { Alert } from '@repo/uikit/components'
 import type { Bonus, User } from '@repo/shared-types'
 import { filterBonuses, type BonusFilterCriteria } from '@repo/libs'
 
-import { appName } from '../app-name'
+import { settings } from '../settings'
 import { authOptions } from '../api/auth/[...nextauth]/route'
 import { BonusesList } from './bonuses-list'
 import styles from './page.module.css'
@@ -23,11 +23,10 @@ export default async function BonusShopPage() {
   const session = await getServerSession(authOptions)
 
   const currentUser = session?.user as User
-  const isAuthenticated = Boolean(session)
 
   const bonusFilterCriteria = {
-    brand: appName.toLowerCase(),
     user: currentUser,
+    brand: settings.appName.toLowerCase(),
   } as BonusFilterCriteria
 
   const filteredBonuses = await getBonuses(bonusFilterCriteria)
@@ -36,7 +35,7 @@ export default async function BonusShopPage() {
     <main>
       <h1>{t('title')}</h1>
 
-      {isAuthenticated && !currentUser.isKYCApproved && (
+      {!currentUser.isKYCApproved && settings.KYCRequired && (
         <Alert type="error" className={styles.alert}>
           {t('kycNotApprovedMessage')}
         </Alert>
