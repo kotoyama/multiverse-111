@@ -1,4 +1,8 @@
 {
+  "metadata": {
+    "title": "{brand}",
+    "description": "مرحبًا بك في {brand}"
+  },
   "header": {
     "loginLink": "تسجيل الدخول",
     "depositLink": "إيداع",
