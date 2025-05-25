@@ -1,0 +1,36 @@
+.bonusGrid {
+  display: grid;
+  gap: var(--space-m);
+  grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+  width: 100%;
+  margin-top: var(--space-l);
+
+  .bonusCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.2s ease-in-out;
+
+    h2 {
+      margin-bottom: var(--space-xs);
+    }
+
+    p {
+      color: var(--uikit-color-text-muted);
+      margin-bottom: var(--space-s);
+    }
+
+    &:hover {
+      transform: translateY(-5px);
+    }
+  }
+}
+
+.alert,
+.noBonuses {
+  margin-top: var(--space-m);
+}
+
+.claimButton {
+  width: 100%;
+}

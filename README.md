@@ -16,9 +16,9 @@ This Turborepo includes the following packages/apps:
 
 ### Apps and Packages
 
-- `docs`: a [Next.js](https://nextjs.org/) app
+- `betfinal`: a [Next.js](https://nextjs.org/) app
 - `cosmoswin`: another [Next.js](https://nextjs.org/) app
-- `@repo/uikit`: a stub React component library shared by both `cosmoswin` and `docs` applications
+- `@repo/uikit`: a stub React component library shared by both `cosmoswin` and `betfinal` applications
 - `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
 - `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
 
