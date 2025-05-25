@@ -1,0 +1,19 @@
+.input {
+  --input-borderColor: var(--uikit-color-border-main);
+  padding: var(--space-s);
+  border: 1px solid var(--input-borderColor);
+  border-radius: var(--uikit-border-radius);
+  background-color: var(--uikit-color-background-input);
+  width: 100%;
+
+  &:focus,
+  &:focus-visible {
+    --input-borderColor: var(--uikit-color-focus-ring);
+    outline: 1px solid var(--uikit-color-focus-ring);
+  }
+
+  &:focus:not(:focus-visible) {
+    --input-borderColor: var(--uikit-color-border-main);
+    outline: none;
+  }
+}

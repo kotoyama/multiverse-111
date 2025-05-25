@@ -1,0 +1,41 @@
+{
+  "header": {
+    "loginLink": "Login",
+    "depositLink": "Deposit",
+    "bonusShopLink": "Bonus Shop",
+    "logoutButton": "Logout",
+    "balanceDisplay": "Balance: {amount}"
+  },
+  "homePage": {
+    "title": "Welcome to {brand}!",
+    "subtitle": "Your unique and amazing gaming experience starts here."
+  },
+  "loginForm": {
+    "title": "Login to {brand}",
+    "usernameLabel": "Username",
+    "passwordLabel": "Password",
+    "loginButton": "Login",
+    "error": {
+      "invalidCredentials": "Invalid username or password",
+      "serverError": "Server error"
+    }
+  },
+  "depositForm": {
+    "title": "Deposit Funds",
+    "amountLabel": "Amount ({currency})",
+    "depositButton": "Deposit Now",
+    "error": {
+      "invalidAmount": "Please enter a valid deposit amount."
+    },
+    "success": {
+      "depositSuccessful": "Successfully deposited {amount} USD. New balance: {newBalance}. Total deposits: {depositCount}."
+    }
+  },
+  "bonusShop": {
+    "title": "Bonus Shop",
+    "kycNotApprovedMessage": "Your account is not KYC approved. Please complete KYC to claim bonuses.",
+    "noBonusesAvailable": "No bonuses available at the moment. Check back soon!",
+    "claimButton": "Claim",
+    "claimedButton": "Claimed"
+  }
+}

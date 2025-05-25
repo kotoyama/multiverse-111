@@ -1,0 +1,41 @@
+{
+  "header": {
+    "loginLink": "تسجيل الدخول",
+    "depositLink": "إيداع",
+    "bonusShopLink": "متجر المكافآت",
+    "logoutButton": "تسجيل الخروج",
+    "balanceDisplay": "الرصيد: {amount}"
+  },
+  "homePage": {
+    "title": "مرحبًا بك في {brand}!",
+    "subtitle": "تجربة الألعاب الفريدة والمدهشة الخاصة بك تبدأ هنا."
+  },
+  "loginForm": {
+    "title": "تسجيل الدخول إلى {brand}",
+    "usernameLabel": "اسم المستخدم",
+    "passwordLabel": "كلمة المرور",
+    "loginButton": "تسجيل الدخول",
+    "error": {
+      "invalidCredentials": "اسم المستخدم أو كلمة المرور غير صحيحة",
+      "serverError": "خطأ في الخادم"
+    }
+  },
+  "depositForm": {
+    "title": "إيداع الأموال",
+    "amountLabel": "المبلغ ({currency})",
+    "depositButton": "إيداع الآن",
+    "error": {
+      "invalidAmount": "يرجى إدخال مبلغ إيداع صحيح."
+    },
+    "success": {
+      "depositSuccessful": "تم إيداع {amount} دولار بنجاح. الرصيد الجديد: {newBalance}. إجمالي الإيداعات: {depositCount}."
+    }
+  },
+  "bonusShop": {
+    "title": "متجر المكافآت",
+    "kycNotApprovedMessage": "لم تتم الموافقة على حسابك في التحقق من الهوية (KYC). الرجاء إكمال إجراءات التحقق للمطالبة بالمكافآت.",
+    "noBonusesAvailable": "لا توجد مكافآت متاحة في الوقت الحالي. تحقق لاحقًا!",
+    "claimButton": "مطالبة",
+    "claimedButton": "تمت المطالبة"
+  }
+}

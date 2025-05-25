@@ -1,0 +1,17 @@
+{
+  "name": "@repo/i18n",
+  "version": "0.0.0",
+  "type": "module",
+  "private": true,
+  "dependencies": {
+    "@repo/uikit": "*",
+    "next": "^15.3.0",
+    "next-intl": "^4.1.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "@repo/typescript-config": "*",
+    "typescript": "5.8.2"
+  }
+}

@@ -1,0 +1,29 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-m);
+  background-color: var(--uikit-color-background-surface);
+  border-bottom: 2px solid var(--uikit-color-primary-main);
+
+  .logo {
+    font-size: var(--text-xl);
+    font-weight: bold;
+    color: var(--uikit-color-primary-main);
+  }
+
+  .navigation {
+    display: flex;
+    align-items: center;
+    gap: var(--space-m);
+
+    .navLink {
+      font-size: var(--text-s);
+      padding: var(--space-xs) var(--space-s);
+    }
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+}
