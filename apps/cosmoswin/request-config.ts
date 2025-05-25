@@ -1,6 +1,6 @@
 import { IntlErrorCode } from '@repo/i18n/client'
 import { getRequestConfig } from '@repo/i18n/server'
-import { getUserLocale } from '@repo/i18n/localeService'
+import { getUserLocale } from '@repo/i18n/locale-service'
 
 export default getRequestConfig(async () => {
   const locale = await getUserLocale()

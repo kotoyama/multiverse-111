@@ -7,7 +7,7 @@ import { Button } from '@repo/uikit/components'
 
 import { i18n } from './config'
 import { type Locale } from './types'
-import { setUserLocale } from './localeService'
+import { setUserLocale } from './locale-service'
 import styles from './language-switcher.module.css'
 
 export default function LanguageSwitcher() {
