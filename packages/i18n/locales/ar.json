@@ -11,8 +11,19 @@
     "balanceDisplay": "الرصيد: {amount}"
   },
   "homePage": {
-    "title": "مرحبًا بك في {brand}!",
-    "subtitle": "تجربة الألعاب الفريدة والمدهشة الخاصة بك تبدأ هنا."
+    "title": "مرحبًا بك في {brand}, {username}!",
+    "subtitle": "تجربة الألعاب الفريدة والمدهشة الخاصة بك تبدأ هنا.",
+    "userFields": {
+      "currentBalance": "الرصيد الحالي: {amount}",
+      "depositCount": "عدد الإيداعات: {count}",
+      "isKYCApproved": "تم الموافقة على KYC: {approved}",
+      "registrationDate": "تاريخ التسجيل: {date}",
+      "country": "البلد: {country}"
+    },
+    "options": {
+      "yes": "نعم",
+      "no": "لا"
+    }
   },
   "loginForm": {
     "title": "تسجيل الدخول إلى {brand}",

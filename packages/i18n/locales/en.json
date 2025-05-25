@@ -11,8 +11,19 @@
     "balanceDisplay": "Balance: {amount}"
   },
   "homePage": {
-    "title": "Welcome to {brand}!",
-    "subtitle": "Your unique and amazing gaming experience starts here."
+    "title": "Welcome to {brand}, {username}!",
+    "subtitle": "Your unique and amazing gaming experience starts here.",
+    "userFields": {
+      "currentBalance": "Current Balance: {amount}",
+      "depositCount": "Deposit Count: {count}",
+      "isKYCApproved": "KYC Approved: {approved}",
+      "registrationDate": "Registration Date: {date}",
+      "country": "Country: {country}"
+    },
+    "options": {
+      "yes": "Yes",
+      "no": "No"
+    }
   },
   "loginForm": {
     "title": "Login to {brand}",
