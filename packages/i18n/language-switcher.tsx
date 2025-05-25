@@ -27,7 +27,7 @@ export default function LanguageSwitcher() {
         <Button
           key={locale}
           className={styles.languageButton}
-          data-selected={currentLocale === locale}
+          aria-pressed={currentLocale === locale}
           onClick={() => onClick(locale)}
         >
           {locale}

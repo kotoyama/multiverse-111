@@ -24,7 +24,7 @@
       background-color: var(--uikit-color-background-input);
     }
 
-    &[data-selected='true'] {
+    &[aria-pressed='true'] {
       cursor: default;
       background-color: var(--uikit-color-primary-main);
       color: var(--uikit-color-primary-contrast);
