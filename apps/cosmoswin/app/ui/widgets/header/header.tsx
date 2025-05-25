@@ -1,7 +1,6 @@
 'use client'
 
 import React from 'react'
-import Link from 'next/link'
 import { signOut } from 'next-auth/react'
 
 import { useTranslations } from '@repo/i18n/client'
@@ -10,8 +9,13 @@ import LanguageSwitcher from '@repo/i18n/language-switcher'
 
 import { useAppSelector } from '../../../lib/hooks'
 import styles from './header.module.css'
+import { Link } from '../../../../routing'
 
-export function Header() {
+type Props = {
+  brand: string
+}
+
+export function Header({ brand }: Props) {
   const t = useTranslations('header')
   const { currentUser, isAuthenticated } = useAppSelector((state) => state.user)
 
@@ -22,7 +26,7 @@ export function Header() {
   return (
     <header className={styles.header}>
       <div className={styles.logo}>
-        <Link href="/">Cosmoswin</Link>
+        <Link href="/">{brand}</Link>
       </div>
       <nav className={styles.navigation}>
         {isAuthenticated ? (

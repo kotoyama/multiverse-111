@@ -59,7 +59,7 @@ export default async function RootLayout(props: {
           <SessionProvider session={session}>
             <StoreProvider preloadedState={preloadedState}>
               <BootstrapAppProvider />
-              <Header />
+              <Header brand="Cosmoswin" />
               {children}
             </StoreProvider>
           </SessionProvider>

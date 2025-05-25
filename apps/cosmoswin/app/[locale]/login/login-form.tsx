@@ -57,7 +57,7 @@ export default function LoginForm() {
 
   return (
     <Card className={styles.container}>
-      <h1>{t('title')}</h1>
+      <h1>{t('title', { brand: 'Cosmoswin' })}</h1>
       <form className={styles.loginForm} onSubmit={handleLogin}>
         <FormInput
           id="username"
