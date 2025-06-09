@@ -50,6 +50,14 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
 
   return (
     <html lang={locale} dir={dir}>
+      {process.env.NEXT_PUBLIC_ENABLE_REACT_SCAN && (
+        <head>
+          <script
+            src="https://unpkg.com/react-scan/dist/auto.global.js"
+            async
+          />
+        </head>
+      )}
       <body className={amiri.variable}>
         <NextIntlClientProvider locale={locale}>
           <AppProvider session={session} preloadedState={preloadedState}>

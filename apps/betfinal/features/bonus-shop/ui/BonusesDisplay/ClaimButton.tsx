@@ -7,7 +7,7 @@ import { Button } from '@repo/uikit/components'
 
 import styles from './BonusesDisplay.module.css'
 
-export const ClaimButton = React.memo(() => {
+export const ClaimButton = () => {
   const t = useTranslations('bonusShop')
   const [isClaimed, setIsClaimed] = React.useState(false)
 
@@ -25,6 +25,4 @@ export const ClaimButton = React.memo(() => {
       {t(isClaimed ? 'claimedButton' : 'claimButton')}
     </Button>
   )
-})
-
-ClaimButton.displayName = 'ClaimButton'
+}
