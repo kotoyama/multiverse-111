@@ -1,3 +1,22 @@
+# Betfinal App
+
+## Project Structure (FSD)
+
+This project uses the **[Feature-Sliced Design](https://feature-sliced.github.io/documentation/)** architecture to enhance scalability and maintainability:
+
+```bash
+src/
+├── app/           # Next.js app router (layouts, pages)
+├── entities/      # Business entities like user, product
+│   ├── model/     # Types, stores, services
+│   └── ui/        # Entity-specific UI components
+├── features/      # Independent, reusable features
+│   ├── model/     # Logic, stores, types
+│   └── ui/        # UI for feature interactions
+├── shared/        # Cross-cutting code (global utils, UI, config)
+└── widgets/       # UI blocks that encapsulate full use cases
+```
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/create-next-app).
 
 ## Getting Started

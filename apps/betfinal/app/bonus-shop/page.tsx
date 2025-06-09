@@ -2,7 +2,7 @@ import { getTranslations } from '@repo/i18n/server'
 import { bonuses } from '@repo/data'
 import type { Bonus } from '@repo/shared-types'
 
-import { BonusesDisplay } from './bonuses-display'
+import { BonusesDisplay } from '~/features/bonus-shop'
 
 async function getBonuses(): Promise<Bonus[]> {
   return bonuses

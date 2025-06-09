@@ -6,15 +6,12 @@ import { NextIntlClientProvider } from '@repo/i18n/client'
 import { getLocale, getTranslations } from '@repo/i18n/server'
 import '@repo/uikit/style.css'
 
+import { settings } from '~/shared/settings'
+import { Header } from '~/widgets/header'
+
 import { authOptions } from './api/auth/[...nextauth]/route'
-import {
-  BootstrapAppProvider,
-  SessionProvider,
-  StoreProvider,
-} from './providers'
-import { settings } from './settings'
-import { Header } from './ui/widgets/header'
-import './ui/globals.css'
+import { AppProvider } from './_providers'
+import './globals.css'
 
 const amiri = Amiri({
   variable: '--font-amiri',
@@ -55,13 +52,10 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
     <html lang={locale} dir={dir}>
       <body className={amiri.variable}>
         <NextIntlClientProvider locale={locale}>
-          <SessionProvider session={session}>
-            <StoreProvider preloadedState={preloadedState}>
-              <BootstrapAppProvider />
-              <Header brand={settings.appName} />
-              {children}
-            </StoreProvider>
-          </SessionProvider>
+          <AppProvider session={session} preloadedState={preloadedState}>
+            <Header brand={settings.appName} />
+            {children}
+          </AppProvider>
         </NextIntlClientProvider>
       </body>
     </html>
