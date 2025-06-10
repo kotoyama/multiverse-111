@@ -1,1 +1,1 @@
-export * from './BonusesDisplay'
+export * from './BonusesList'

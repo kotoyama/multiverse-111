@@ -5,16 +5,16 @@ import React from 'react'
 import { useTranslations } from '@repo/i18n/client'
 import { Button } from '@repo/uikit/components'
 
-import styles from './BonusesDisplay.module.css'
+import styles from './BonusesList.module.css'
 
 export const ClaimButton = () => {
   const t = useTranslations('bonusShop')
   const [isClaimed, setIsClaimed] = React.useState(false)
 
-  const handleClaim = React.useCallback(() => {
+  const handleClaim = () => {
     if (isClaimed) return
     setIsClaimed(true)
-  }, [isClaimed])
+  }
 
   return (
     <Button

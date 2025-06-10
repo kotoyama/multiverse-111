@@ -1,0 +1,4 @@
+.alert,
+.noBonuses {
+  margin-top: var(--space-m);
+}

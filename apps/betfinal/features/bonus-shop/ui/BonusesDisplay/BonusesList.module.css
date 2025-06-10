@@ -26,11 +26,6 @@
   }
 }
 
-.alert,
-.noBonuses {
-  margin-top: var(--space-m);
-}
-
 .claimButton {
   width: 100%;
 }
