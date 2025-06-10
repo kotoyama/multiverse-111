@@ -8,9 +8,11 @@ import { type Locale } from './types'
 const COOKIE_NAME = 'NEXT_LOCALE'
 
 export async function getUserLocale() {
-  return (await cookies()).get(COOKIE_NAME)?.value || i18n.defaultLocale
+  const cookieStore = await cookies()
+  return cookieStore.get(COOKIE_NAME)?.value || i18n.defaultLocale
 }
 
 export async function setUserLocale(locale: Locale) {
-  ;(await cookies()).set(COOKIE_NAME, locale)
+  const cookieStore = await cookies()
+  cookieStore.set(COOKIE_NAME, locale)
 }
